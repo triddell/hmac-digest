@@ -19,7 +19,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	var h hash.Hash = hmac.New(sha1.New, []byte(args[1]))
+	var h = hmac.New(sha1.New, []byte(args[1]))
 	h.Write([]byte(args[0]))
 	fmt.Println(base64.URLEncoding.EncodeToString(h.Sum(nil)))
 }
